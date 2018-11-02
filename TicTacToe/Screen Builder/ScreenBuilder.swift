@@ -11,6 +11,7 @@ import UIKit
 
 protocol ScreenBuilderProtocol: class {
     func didSelectButton(buttonId: Int)
+    func didStartGame(startPlayer: Int)
 }
 
 
@@ -28,12 +29,12 @@ class ScreenBuilder {
     // working variables
     private var edgeDistance : CGFloat = 66
     private var innerEdges : CGFloat = 16
+    private var playerId : Int = 0
     
     init(view: UIView) {
         
         self.view = view
-        
-        
+
         headerView = UIView()
         buildHeader()
         
@@ -42,6 +43,9 @@ class ScreenBuilder {
         
         gameView = UIView()
         buildGameArea()
+        
+        // prepare footer with game options to start it
+        
 
     }
     
@@ -58,6 +62,44 @@ class ScreenBuilder {
         footerView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1)
         view.addSubview(footerView)
         
+        addPlayerOptionToFooterView()
+        
+    }
+    
+    private func addPlayerOptionToFooterView() {
+        
+        let factor = self.footerView.bounds.size.width / 4
+        let borderSpace : CGFloat = 16
+        let segmentedControlWidth = (factor * 2) + borderSpace
+        
+        
+        // UISegmentedControl for player option --------------------------
+        let items = ["Eu" , "Aparelho"]
+        let segmentedControl = UISegmentedControl(items : items)
+        segmentedControl.frame = CGRect(x: borderSpace, y: borderSpace, width: (segmentedControlWidth + (4 * borderSpace)), height: (self.footerView.bounds.size.height - (2 * borderSpace)))
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentedControlAction), for: .valueChanged)
+        self.footerView.addSubview(segmentedControl)
+        // End of UISegmentedControl for player option -------------------
+        
+        // UIButton for start game -----------------
+        let startButton = UIButton(frame: CGRect(x: 3 * factor, y: borderSpace, width: factor, height: (self.footerView.bounds.size.height - (2 * borderSpace))))
+        startButton.backgroundColor = UIColor.clear
+        startButton.setTitle("Iniciar", for: .normal)
+        startButton.setTitleColor(UIColor.black, for: .normal)
+        startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
+        self.footerView.addSubview(startButton)
+        
+        // End of UIButton for start game -----------------
+
+    }
+    
+    @objc func segmentedControlAction(sender: UISegmentedControl!) {
+        playerId = sender.selectedSegmentIndex
+    }
+    
+    @objc func startButtonAction(sender: UIButton!) {
+        delegate?.didStartGame(startPlayer: playerId)
     }
     
     // MARK: - Game Area

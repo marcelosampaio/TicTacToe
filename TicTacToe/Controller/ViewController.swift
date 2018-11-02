@@ -8,15 +8,18 @@
 
 import UIKit
 
+public var gameRunning = false
+
 class ViewController: UIViewController, ScreenBuilderProtocol{
     
     // MARK: - Properties
     private var screenBuilder : ScreenBuilder!
+    private var gameStatus : String!
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // ui components builder
         self.screenBuilder = ScreenBuilder(view: self.view)
         self.screenBuilder.delegate = self
@@ -32,6 +35,10 @@ class ViewController: UIViewController, ScreenBuilderProtocol{
         
         print("tapped buttonId: \(buttonId)")
         
+    }
+    
+    func didStartGame(startPlayer: Int) {
+        print("start player: \(startPlayer)")
     }
 
 
