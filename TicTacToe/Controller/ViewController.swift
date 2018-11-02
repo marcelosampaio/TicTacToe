@@ -39,6 +39,8 @@ class ViewController: UIViewController, ScreenBuilderProtocol{
     
     func didStartGame(startPlayer: Int) {
         print("start player: \(startPlayer)")
+        
+        // remove subViews of footer view
         self.screenBuilder.removeFooterViews(view: self.view)
     }
 

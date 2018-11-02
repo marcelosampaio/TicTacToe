@@ -397,8 +397,10 @@ class ScreenBuilder {
     }
 
     
-    // MARK: - Game Controller Commands
+    // MARK: - Game Controller Outlets
     public func removeFooterViews(view: UIView) {
+        // mainView is the footerView;
+        // this method will remove all its subViews
         for mainView in view.subviews {
             if mainView.tag == 2000 {
                 for view in mainView.subviews {
