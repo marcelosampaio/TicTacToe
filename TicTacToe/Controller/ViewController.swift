@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ScreenBuilderProtocol{
     
     // MARK: - Properties
     private var screenBuilder : ScreenBuilder!
@@ -19,9 +19,18 @@ class ViewController: UIViewController {
         
         // ui components builder
         self.screenBuilder = ScreenBuilder(view: self.view)
+        self.screenBuilder.delegate = self
         
         // main ui appearence
         self.view.backgroundColor = UIColor.white
+        
+    }
+    
+    
+    // MARK: - Screen Builder Delegate
+    func didSelectButton(buttonId: Int) {
+        
+        print("tapped buttonId: \(buttonId)")
         
     }
 

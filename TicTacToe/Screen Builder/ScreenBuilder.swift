@@ -9,7 +9,15 @@
 import Foundation
 import UIKit
 
+protocol ScreenBuilderProtocol: class {
+    func didSelectButton(buttonId: Int)
+}
+
+
 class ScreenBuilder {
+    
+    // MARK: - Properties
+    weak var delegate: ScreenBuilderProtocol?
     
     // UI Views
     private var view : UIView!
@@ -169,7 +177,7 @@ class ScreenBuilder {
         buttonLabelView0.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView0.textColor = UIColor.black
         buttonLabelView0.textAlignment = NSTextAlignment.center
-        buttonLabelView0.text = "O"
+        buttonLabelView0.text = ""
         buttonLabelView0.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView0)
         
@@ -179,7 +187,7 @@ class ScreenBuilder {
         buttonLabelView1.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView1.textColor = UIColor.black
         buttonLabelView1.textAlignment = NSTextAlignment.center
-        buttonLabelView1.text = "X"
+        buttonLabelView1.text = ""
         buttonLabelView1.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView1)
         
@@ -189,7 +197,7 @@ class ScreenBuilder {
         buttonLabelView2.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView2.textColor = UIColor.black
         buttonLabelView2.textAlignment = NSTextAlignment.center
-        buttonLabelView2.text = "X"
+        buttonLabelView2.text = ""
         buttonLabelView2.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView2)
         
@@ -200,7 +208,7 @@ class ScreenBuilder {
         buttonLabelView3.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView3.textColor = UIColor.black
         buttonLabelView3.textAlignment = NSTextAlignment.center
-        buttonLabelView3.text = "O"
+        buttonLabelView3.text = ""
         buttonLabelView3.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView3)
         
@@ -210,7 +218,7 @@ class ScreenBuilder {
         buttonLabelView4.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView4.textColor = UIColor.black
         buttonLabelView4.textAlignment = NSTextAlignment.center
-        buttonLabelView4.text = "O"
+        buttonLabelView4.text = ""
         buttonLabelView4.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView4)
         
@@ -220,7 +228,7 @@ class ScreenBuilder {
         buttonLabelView5.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView5.textColor = UIColor.black
         buttonLabelView5.textAlignment = NSTextAlignment.center
-        buttonLabelView5.text = "X"
+        buttonLabelView5.text = ""
         buttonLabelView5.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView5)
         
@@ -231,7 +239,7 @@ class ScreenBuilder {
         buttonLabelView6.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView6.textColor = UIColor.black
         buttonLabelView6.textAlignment = NSTextAlignment.center
-        buttonLabelView6.text = "X"
+        buttonLabelView6.text = ""
         buttonLabelView6.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView6)
         
@@ -241,7 +249,7 @@ class ScreenBuilder {
         buttonLabelView7.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView7.textColor = UIColor.black
         buttonLabelView7.textAlignment = NSTextAlignment.center
-        buttonLabelView7.text = "O"
+        buttonLabelView7.text = ""
         buttonLabelView7.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView7)
         
@@ -251,7 +259,7 @@ class ScreenBuilder {
         buttonLabelView8.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView8.textColor = UIColor.black
         buttonLabelView8.textAlignment = NSTextAlignment.center
-        buttonLabelView8.text = "X"
+        buttonLabelView8.text = ""
         buttonLabelView8.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView8)
         
@@ -342,7 +350,7 @@ class ScreenBuilder {
     }
     
     @objc func buttonAction(sender: UIButton!) {
-        print("BUTTON TAPPED: \(sender.tag)")
+        delegate?.didSelectButton(buttonId: (sender.tag - 1000))
     }
 
 }
