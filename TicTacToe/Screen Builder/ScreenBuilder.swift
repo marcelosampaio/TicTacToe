@@ -59,6 +59,7 @@ class ScreenBuilder {
     
     private func buildFooter() {
         footerView.frame = CGRect(x: 0, y: view.bounds.height - edgeDistance, width: view.bounds.width, height: edgeDistance)
+        footerView.tag = 2000
         footerView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1)
         view.addSubview(footerView)
         
@@ -395,4 +396,17 @@ class ScreenBuilder {
         delegate?.didSelectButton(buttonId: (sender.tag - 1000))
     }
 
+    
+    // MARK: - Game Controller Commands
+    public func removeFooterViews(view: UIView) {
+        for mainView in view.subviews {
+            if mainView.tag == 2000 {
+                for view in mainView.subviews {
+                    view.removeFromSuperview()
+                }
+            }
+        }
+    }
+    
+    
 }

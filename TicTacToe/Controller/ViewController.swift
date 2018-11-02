@@ -39,6 +39,7 @@ class ViewController: UIViewController, ScreenBuilderProtocol{
     
     func didStartGame(startPlayer: Int) {
         print("start player: \(startPlayer)")
+        self.screenBuilder.removeFooterViews(view: self.view)
     }
 
 
