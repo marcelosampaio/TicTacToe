@@ -137,6 +137,23 @@ class ScreenBuilder {
         button5.backgroundColor = UIColor.brown
         view.addSubview(button5)
         
+        // Line 2 ---------------
+        // button 6
+        let button6 = UIView(frame: CGRect(x: 0, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        button6.backgroundColor = UIColor.darkGray
+        view.addSubview(button6)
+        
+        // button 7
+        let button7 = UIView(frame: CGRect(x: verticalFactor, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        button7.backgroundColor = UIColor(red: 0.35, green: 0.72, blue: 1, alpha: 1)
+        view.addSubview(button7)
+        
+        // button 8
+        let button8 = UIView(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        button8.backgroundColor = UIColor(red: 0.75, green: 0.22, blue: 0.5, alpha: 1)
+        view.addSubview(button8)
+        
+        
     }
     
     
