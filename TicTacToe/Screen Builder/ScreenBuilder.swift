@@ -12,15 +12,14 @@ import UIKit
 class ScreenBuilder {
     
     // UI Views
-    var view : UIView!
-    var headerView : UIView!
-    var footerView : UIView!
-    var gameView : UIView!
+    private var view : UIView!
+    private var headerView : UIView!
+    private var footerView : UIView!
+    private var gameView : UIView!
     
     // working variables
-    var edgeDistance : CGFloat = 66
-    var horizontalEdges : CGFloat = 16
-    var verticalEdges : CGFloat = 16
+    private var edgeDistance : CGFloat = 66
+    private var innerEdges : CGFloat = 16
     
     init(view: UIView) {
         
@@ -39,26 +38,26 @@ class ScreenBuilder {
     }
     
     
-    func buildHeader() {
+    private func buildHeader() {
         headerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: edgeDistance)
         headerView.backgroundColor = UIColor.orange
         view.addSubview(headerView)
         
     }
     
-    func buildFooter() {
+    private func buildFooter() {
         footerView.frame = CGRect(x: 0, y: view.bounds.height - edgeDistance, width: view.bounds.width, height: edgeDistance)
         footerView.backgroundColor = UIColor.orange
         view.addSubview(footerView)
         
     }
     
-    func buildGameArea() {
+    private func buildGameArea() {
         
-        let positionX = horizontalEdges
-        let positionY = edgeDistance + verticalEdges
-        let innerWidth = view.bounds.width - (2 * horizontalEdges)
-        let innerHeight = ((view.bounds.height) - ( 2 * (edgeDistance + verticalEdges)))
+        let positionX = innerEdges
+        let positionY = edgeDistance + innerEdges
+        let innerWidth = view.bounds.width - (2 * innerEdges)
+        let innerHeight = ((view.bounds.height) - ( 2 * (edgeDistance + innerEdges)))
         
         gameView.frame = CGRect(x: positionX, y: positionY, width: innerWidth, height: innerHeight)
         gameView.backgroundColor = UIColor.yellow
