@@ -44,9 +44,6 @@ class ScreenBuilder {
         gameView = UIView()
         buildGameArea()
         
-        // prepare footer with game options to start it
-        
-
     }
     
     // MARK: - Header and Footer
@@ -94,6 +91,9 @@ class ScreenBuilder {
         // End of UIButton for start game -----------------
 
     }
+    
+    
+    // MARK: - UI Actions
     
     @objc func segmentedControlAction(sender: UISegmentedControl!) {
         playerId = sender.selectedSegmentIndex
