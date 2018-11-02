@@ -40,14 +40,14 @@ class ScreenBuilder {
     
     private func buildHeader() {
         headerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: edgeDistance)
-        headerView.backgroundColor = UIColor.orange
+        headerView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1)
         view.addSubview(headerView)
         
     }
     
     private func buildFooter() {
         footerView.frame = CGRect(x: 0, y: view.bounds.height - edgeDistance, width: view.bounds.width, height: edgeDistance)
-        footerView.backgroundColor = UIColor.orange
+        footerView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1)
         view.addSubview(footerView)
         
     }
@@ -96,64 +96,165 @@ class ScreenBuilder {
         horizontal2View.backgroundColor = UIColor.black
         view.addSubview(horizontal2View)
         
-        // build buttons
-        buildGameButtons(view: gameView, verticalFactor: verticalFactor, horizontalFactor: horizontalFactor)
+        // build buttonBackgroundViews
+        buildGameButtonBackgroundViews(view: gameView, verticalFactor: verticalFactor, horizontalFactor: horizontalFactor)
         
         
     }
     
     
-    private func buildGameButtons(view: UIView, verticalFactor: CGFloat, horizontalFactor: CGFloat){
+    private func buildGameButtonBackgroundViews(view: UIView, verticalFactor: CGFloat, horizontalFactor: CGFloat){
         
         // Line 0 ---------------
-        // button 0
-        let button0 = UIView(frame: CGRect(x: 0, y: 0, width: verticalFactor, height: horizontalFactor))
-        button0.backgroundColor = UIColor.yellow
-        view.addSubview(button0)
+        // buttonBackgroundView 0
+        let buttonBackgroundView0 = UIView(frame: CGRect(x: 0, y: 0, width: verticalFactor, height: horizontalFactor))
+        buttonBackgroundView0.backgroundColor = UIColor.clear
+        view.addSubview(buttonBackgroundView0)
         
-        // button 1
-        let button1 = UIView(frame: CGRect(x: verticalFactor, y: 0, width: verticalFactor, height: horizontalFactor))
-        button1.backgroundColor = UIColor.purple
-        view.addSubview(button1)
+        // buttonBackgroundView 1
+        let buttonBackgroundView1 = UIView(frame: CGRect(x: verticalFactor, y: 0, width: verticalFactor, height: horizontalFactor))
+        buttonBackgroundView1.backgroundColor = UIColor.clear
+        view.addSubview(buttonBackgroundView1)
         
-        // button 2
-        let button2 = UIView(frame: CGRect(x: verticalFactor * 2, y: 0, width: verticalFactor, height: horizontalFactor))
-        button2.backgroundColor = UIColor.green
-        view.addSubview(button2)
+        // buttonBackgroundView 2
+        let buttonBackgroundView2 = UIView(frame: CGRect(x: verticalFactor * 2, y: 0, width: verticalFactor, height: horizontalFactor))
+        buttonBackgroundView2.backgroundColor = UIColor.clear
+        view.addSubview(buttonBackgroundView2)
         
         // Line 1 ---------------
-        // button 3
-        let button3 = UIView(frame: CGRect(x: 0, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
-        button3.backgroundColor = UIColor.red
-        view.addSubview(button3)
+        // buttonBackgroundView 3
+        let buttonBackgroundView3 = UIView(frame: CGRect(x: 0, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        buttonBackgroundView3.backgroundColor = UIColor.clear
+        view.addSubview(buttonBackgroundView3)
         
-        // button 4
-        let button4 = UIView(frame: CGRect(x: verticalFactor, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
-        button4.backgroundColor = UIColor.blue
-        view.addSubview(button4)
+        // buttonBackgroundView 4
+        let buttonBackgroundView4 = UIView(frame: CGRect(x: verticalFactor, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        buttonBackgroundView4.backgroundColor = UIColor.clear
+        view.addSubview(buttonBackgroundView4)
 
-        // button 5
-        let button5 = UIView(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
-        button5.backgroundColor = UIColor.brown
-        view.addSubview(button5)
+        // buttonBackgroundView 5
+        let buttonBackgroundView5 = UIView(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        buttonBackgroundView5.backgroundColor = UIColor.clear
+        view.addSubview(buttonBackgroundView5)
         
         // Line 2 ---------------
-        // button 6
-        let button6 = UIView(frame: CGRect(x: 0, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
-        button6.backgroundColor = UIColor.darkGray
-        view.addSubview(button6)
+        // buttonBackgroundView 6
+        let buttonBackgroundView6 = UIView(frame: CGRect(x: 0, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        buttonBackgroundView6.backgroundColor = UIColor.clear
+        view.addSubview(buttonBackgroundView6)
         
-        // button 7
-        let button7 = UIView(frame: CGRect(x: verticalFactor, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
-        button7.backgroundColor = UIColor(red: 0.35, green: 0.72, blue: 1, alpha: 1)
-        view.addSubview(button7)
+        // buttonBackgroundView 7
+        let buttonBackgroundView7 = UIView(frame: CGRect(x: verticalFactor, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        buttonBackgroundView7.backgroundColor = UIColor.clear
+        view.addSubview(buttonBackgroundView7)
         
-        // button 8
-        let button8 = UIView(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
-        button8.backgroundColor = UIColor(red: 0.75, green: 0.22, blue: 0.5, alpha: 1)
-        view.addSubview(button8)
+        // buttonBackgroundView 8
+        let buttonBackgroundView8 = UIView(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        buttonBackgroundView8.backgroundColor = UIColor.clear
+        view.addSubview(buttonBackgroundView8)
+        
+        // build labels
+        buildGameButtonLabelViews(view: view, verticalFactor: verticalFactor, horizontalFactor: horizontalFactor)
         
         
+        
+    }
+    
+    private func buildGameButtonLabelViews(view: UIView, verticalFactor: CGFloat, horizontalFactor: CGFloat){
+
+        // Line 0 ---------------
+        // buttonLabelView 0
+        let buttonLabelView0 = UILabel(frame: CGRect(x: 0, y: 0, width: verticalFactor, height: horizontalFactor))
+        buttonLabelView0.font = UIFont(name: "Halvetica", size: 122)
+        buttonLabelView0.font = UIFont.boldSystemFont(ofSize: 122.0)
+        buttonLabelView0.textColor = UIColor.black
+        buttonLabelView0.textAlignment = NSTextAlignment.center
+        buttonLabelView0.text = "X"
+        buttonLabelView0.backgroundColor = UIColor.clear
+        view.addSubview(buttonLabelView0)
+        
+        // buttonLabelView 1
+        let buttonLabelView1 = UILabel(frame: CGRect(x: verticalFactor, y: 0, width: verticalFactor, height: horizontalFactor))
+        buttonLabelView1.font = UIFont(name: "Halvetica", size: 122)
+        buttonLabelView1.font = UIFont.boldSystemFont(ofSize: 122.0)
+        buttonLabelView1.textColor = UIColor.black
+        buttonLabelView1.textAlignment = NSTextAlignment.center
+        buttonLabelView1.text = "X"
+        buttonLabelView1.backgroundColor = UIColor.clear
+        view.addSubview(buttonLabelView1)
+        
+        // buttonLabelView 2
+        let buttonLabelView2 = UILabel(frame: CGRect(x: verticalFactor * 2, y: 0, width: verticalFactor, height: horizontalFactor))
+        buttonLabelView2.font = UIFont(name: "Halvetica", size: 122)
+        buttonLabelView2.font = UIFont.boldSystemFont(ofSize: 122.0)
+        buttonLabelView2.textColor = UIColor.black
+        buttonLabelView2.textAlignment = NSTextAlignment.center
+        buttonLabelView2.text = "X"
+        buttonLabelView2.backgroundColor = UIColor.clear
+        view.addSubview(buttonLabelView2)
+        
+        // Line 1 ---------------
+        // buttonLabelView 3
+        let buttonLabelView3 = UILabel(frame: CGRect(x: 0, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        buttonLabelView3.font = UIFont(name: "Halvetica", size: 122)
+        buttonLabelView3.font = UIFont.boldSystemFont(ofSize: 122.0)
+        buttonLabelView3.textColor = UIColor.black
+        buttonLabelView3.textAlignment = NSTextAlignment.center
+        buttonLabelView3.text = "X"
+        buttonLabelView3.backgroundColor = UIColor.clear
+        view.addSubview(buttonLabelView3)
+        
+        // buttonLabelView 4
+        let buttonLabelView4 = UILabel(frame: CGRect(x: verticalFactor, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        buttonLabelView4.font = UIFont(name: "Halvetica", size: 122)
+        buttonLabelView4.font = UIFont.boldSystemFont(ofSize: 122.0)
+        buttonLabelView4.textColor = UIColor.black
+        buttonLabelView4.textAlignment = NSTextAlignment.center
+        buttonLabelView4.text = "X"
+        buttonLabelView4.backgroundColor = UIColor.clear
+        view.addSubview(buttonLabelView4)
+        
+        // buttonLabelView 5
+        let buttonLabelView5 = UILabel(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        buttonLabelView5.font = UIFont(name: "Halvetica", size: 122)
+        buttonLabelView5.font = UIFont.boldSystemFont(ofSize: 122.0)
+        buttonLabelView5.textColor = UIColor.black
+        buttonLabelView5.textAlignment = NSTextAlignment.center
+        buttonLabelView5.text = "X"
+        buttonLabelView5.backgroundColor = UIColor.clear
+        view.addSubview(buttonLabelView5)
+        
+        // Line 2 ---------------
+        // buttonLabelView 6
+        let buttonLabelView6 = UILabel(frame: CGRect(x: 0, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        buttonLabelView6.font = UIFont(name: "Halvetica", size: 122)
+        buttonLabelView6.font = UIFont.boldSystemFont(ofSize: 122.0)
+        buttonLabelView6.textColor = UIColor.black
+        buttonLabelView6.textAlignment = NSTextAlignment.center
+        buttonLabelView6.text = "X"
+        buttonLabelView6.backgroundColor = UIColor.clear
+        view.addSubview(buttonLabelView6)
+        
+        // buttonLabelView 7
+        let buttonLabelView7 = UILabel(frame: CGRect(x: verticalFactor, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        buttonLabelView7.font = UIFont(name: "Halvetica", size: 122)
+        buttonLabelView7.font = UIFont.boldSystemFont(ofSize: 122.0)
+        buttonLabelView7.textColor = UIColor.black
+        buttonLabelView7.textAlignment = NSTextAlignment.center
+        buttonLabelView7.text = "X"
+        buttonLabelView7.backgroundColor = UIColor.clear
+        view.addSubview(buttonLabelView7)
+        
+        // buttonLabelView 8
+        let buttonLabelView8 = UILabel(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        buttonLabelView8.font = UIFont(name: "Halvetica", size: 122)
+        buttonLabelView8.font = UIFont.boldSystemFont(ofSize: 122.0)
+        buttonLabelView8.textColor = UIColor.black
+        buttonLabelView8.textAlignment = NSTextAlignment.center
+        buttonLabelView8.text = "X"
+        buttonLabelView8.backgroundColor = UIColor.clear
+        view.addSubview(buttonLabelView8)
+
     }
     
     
