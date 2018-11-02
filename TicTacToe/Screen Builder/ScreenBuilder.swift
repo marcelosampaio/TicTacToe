@@ -280,29 +280,69 @@ class ScreenBuilder {
         button1.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         view.addSubview(button1)
         
+        // button 2
+        let button2 = UIButton(frame: CGRect(x: verticalFactor * 2, y: 0, width: verticalFactor, height: horizontalFactor))
+        button2.tag = 1002
+        button2.backgroundColor = UIColor.clear
+        button2.setTitle("", for: .normal)
+        button2.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button2)
+        
+        // Line 1 ---------------
+        // button 3
+        let button3 = UIButton(frame: CGRect(x: 0, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        button3.tag = 1003
+        button3.backgroundColor = UIColor.clear
+        button3.setTitle("", for: .normal)
+        button3.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button3)
+        
+        // button 4
+        let button4 = UIButton(frame: CGRect(x: verticalFactor, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        button4.tag = 1004
+        button4.backgroundColor = UIColor.clear
+        button4.setTitle("", for: .normal)
+        button4.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button4)
+        
+        // button 5
+        let button5 = UIButton(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        button5.tag = 1005
+        button5.backgroundColor = UIColor.clear
+        button5.setTitle("", for: .normal)
+        button5.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button5)
+        
+        
+        // Line 6 ---------------
+        // button 6
+        let button6 = UIButton(frame: CGRect(x: 0, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        button6.tag = 1006
+        button6.backgroundColor = UIColor.clear
+        button6.setTitle("", for: .normal)
+        button6.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button6)
+        
+        // button 7
+        let button7 = UIButton(frame: CGRect(x: verticalFactor, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        button7.tag = 1007
+        button7.backgroundColor = UIColor.clear
+        button7.setTitle("", for: .normal)
+        button7.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button7)
+        
+        // button 8
+        let button8 = UIButton(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor * 2, width: verticalFactor, height: horizontalFactor))
+        button8.tag = 1008
+        button8.backgroundColor = UIColor.clear
+        button8.setTitle("", for: .normal)
+        button8.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button8)
+        
     }
     
     @objc func buttonAction(sender: UIButton!) {
         print("BUTTON TAPPED: \(sender.tag)")
     }
-    
-    /*
-     let button = UIButton()
-     button.frame = CGRect(x: self.view.frame.size.width - 60, y: 60, width: 50, height: 50)
-     button.backgroundColor = UIColor.red
-     button.setTitle("Name your Button ", for: .normal)
-     button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-     self.view.addSubview(button)
-     
-     @objc func buttonAction(sender: UIButton!) {
-     print("Button tapped")
-     }
-    
-    */
-    
-    
-    
-    
-    
-    
+
 }
