@@ -37,7 +37,7 @@ class ScreenBuilder {
 
     }
     
-    
+    // MARK: - Header and Footer
     private func buildHeader() {
         headerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: edgeDistance)
         headerView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1)
@@ -52,6 +52,7 @@ class ScreenBuilder {
         
     }
     
+    // MARK: - Game Area
     private func buildGameArea() {
         
         let positionX = innerEdges
@@ -66,11 +67,10 @@ class ScreenBuilder {
         
         // build game board
         buildGameBoard(view: gameView)
-
-        
     }
 
     
+    // MARK: - Game Board
     private func buildGameBoard(view: UIView){
      
         // vertical 1
@@ -97,13 +97,13 @@ class ScreenBuilder {
         view.addSubview(horizontal2View)
         
         // build buttonBackgroundViews
-        buildGameButtonBackgroundViews(view: gameView, verticalFactor: verticalFactor, horizontalFactor: horizontalFactor)
+        buildGameButtonBackgrounds(view: gameView, verticalFactor: verticalFactor, horizontalFactor: horizontalFactor)
         
         
     }
     
-    
-    private func buildGameButtonBackgroundViews(view: UIView, verticalFactor: CGFloat, horizontalFactor: CGFloat){
+    // MARK: - Touchable Board Area Controls
+    private func buildGameButtonBackgrounds(view: UIView, verticalFactor: CGFloat, horizontalFactor: CGFloat){
         
         // Line 0 ---------------
         // buttonBackgroundView 0
@@ -154,13 +154,13 @@ class ScreenBuilder {
         view.addSubview(buttonBackgroundView8)
         
         // build labels
-        buildGameButtonLabelViews(view: view, verticalFactor: verticalFactor, horizontalFactor: horizontalFactor)
+        buildGameButtonLabels(view: view, verticalFactor: verticalFactor, horizontalFactor: horizontalFactor)
         
         
         
     }
     
-    private func buildGameButtonLabelViews(view: UIView, verticalFactor: CGFloat, horizontalFactor: CGFloat){
+    private func buildGameButtonLabels(view: UIView, verticalFactor: CGFloat, horizontalFactor: CGFloat){
 
         // Line 0 ---------------
         // buttonLabelView 0
