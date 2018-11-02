@@ -254,8 +254,55 @@ class ScreenBuilder {
         buttonLabelView8.text = "X"
         buttonLabelView8.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView8)
+        
+        // build action buttons
+        buildGameButton(view: view, verticalFactor: verticalFactor, horizontalFactor: horizontalFactor)
+        
 
     }
+    
+    private func buildGameButton(view: UIView, verticalFactor: CGFloat, horizontalFactor: CGFloat){
+    
+        // Line 0 ---------------
+        // button 0
+        let button0 = UIButton(frame: CGRect(x: 0, y: 0, width: verticalFactor, height: horizontalFactor))
+        button0.tag = 1000
+        button0.backgroundColor = UIColor.clear
+        button0.setTitle("", for: .normal)
+        button0.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button0)
+        
+        // button 1
+        let button1 = UIButton(frame: CGRect(x: verticalFactor, y: 0, width: verticalFactor, height: horizontalFactor))
+        button1.tag = 1001
+        button1.backgroundColor = UIColor.clear
+        button1.setTitle("", for: .normal)
+        button1.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        view.addSubview(button1)
+        
+    }
+    
+    @objc func buttonAction(sender: UIButton!) {
+        print("BUTTON TAPPED: \(sender.tag)")
+    }
+    
+    /*
+     let button = UIButton()
+     button.frame = CGRect(x: self.view.frame.size.width - 60, y: 60, width: 50, height: 50)
+     button.backgroundColor = UIColor.red
+     button.setTitle("Name your Button ", for: .normal)
+     button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+     self.view.addSubview(button)
+     
+     @objc func buttonAction(sender: UIButton!) {
+     print("Button tapped")
+     }
+    
+    */
+    
+    
+    
+    
     
     
 }
