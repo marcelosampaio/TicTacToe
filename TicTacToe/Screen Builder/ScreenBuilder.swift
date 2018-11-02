@@ -169,7 +169,7 @@ class ScreenBuilder {
         buttonLabelView0.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView0.textColor = UIColor.black
         buttonLabelView0.textAlignment = NSTextAlignment.center
-        buttonLabelView0.text = "X"
+        buttonLabelView0.text = "O"
         buttonLabelView0.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView0)
         
@@ -200,7 +200,7 @@ class ScreenBuilder {
         buttonLabelView3.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView3.textColor = UIColor.black
         buttonLabelView3.textAlignment = NSTextAlignment.center
-        buttonLabelView3.text = "X"
+        buttonLabelView3.text = "O"
         buttonLabelView3.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView3)
         
@@ -210,7 +210,7 @@ class ScreenBuilder {
         buttonLabelView4.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView4.textColor = UIColor.black
         buttonLabelView4.textAlignment = NSTextAlignment.center
-        buttonLabelView4.text = "X"
+        buttonLabelView4.text = "O"
         buttonLabelView4.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView4)
         
@@ -241,7 +241,7 @@ class ScreenBuilder {
         buttonLabelView7.font = UIFont.boldSystemFont(ofSize: 122.0)
         buttonLabelView7.textColor = UIColor.black
         buttonLabelView7.textAlignment = NSTextAlignment.center
-        buttonLabelView7.text = "X"
+        buttonLabelView7.text = "O"
         buttonLabelView7.backgroundColor = UIColor.clear
         view.addSubview(buttonLabelView7)
         
