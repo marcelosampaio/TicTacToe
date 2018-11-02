@@ -63,6 +63,7 @@ class ScreenBuilder {
         gameView.backgroundColor = UIColor.white
         view.addSubview(gameView)
         
+        
         // build game board
         buildGameBoard(view: gameView)
 
