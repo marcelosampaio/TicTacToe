@@ -17,7 +17,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // ui components builder
         self.screenBuilder = ScreenBuilder(view: self.view)
+        
+        // main ui appearence
         self.view.backgroundColor = UIColor.black
         
     }
