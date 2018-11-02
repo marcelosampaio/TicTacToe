@@ -49,7 +49,7 @@ class ScreenBuilder {
     // MARK: - Header and Footer
     private func buildHeader() {
         headerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: edgeDistance)
-        headerView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1)
+        headerView.backgroundColor = UIColor.navigationBarColor
         view.addSubview(headerView)
         
     }
@@ -57,7 +57,7 @@ class ScreenBuilder {
     private func buildFooter() {
         footerView.frame = CGRect(x: 0, y: view.bounds.height - edgeDistance, width: view.bounds.width, height: edgeDistance)
         footerView.tag = 2000
-        footerView.backgroundColor = UIColor(red: 0.93, green: 0.93, blue: 0.93, alpha: 1)
+        footerView.backgroundColor = UIColor.navigationBarColor
         view.addSubview(footerView)
         
         addPlayerOptionToFooterView()
