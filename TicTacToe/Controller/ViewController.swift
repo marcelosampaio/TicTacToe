@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         self.screenBuilder = ScreenBuilder(view: self.view)
         
         // main ui appearence
-        self.view.backgroundColor = UIColor.black
+        self.view.backgroundColor = UIColor.white
         
     }
 

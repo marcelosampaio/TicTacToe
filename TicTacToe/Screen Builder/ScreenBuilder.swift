@@ -34,7 +34,7 @@ class ScreenBuilder {
         
         gameView = UIView()
         buildGameArea()
-        
+
     }
     
     
@@ -60,10 +60,83 @@ class ScreenBuilder {
         let innerHeight = ((view.bounds.height) - ( 2 * (edgeDistance + innerEdges)))
         
         gameView.frame = CGRect(x: positionX, y: positionY, width: innerWidth, height: innerHeight)
-        gameView.backgroundColor = UIColor.yellow
+        gameView.backgroundColor = UIColor.white
         view.addSubview(gameView)
+        
+        // build game board
+        buildGameBoard(view: gameView)
+
+        
     }
 
+    
+    private func buildGameBoard(view: UIView){
+     
+        // vertical 1
+        let verticalFactor = view.bounds.width / 3
+        let vertical1View = UIView(frame: CGRect(x: verticalFactor, y: 0, width: 2.0, height: view.bounds.size.height))
+        vertical1View.backgroundColor = UIColor.black
+        view.addSubview(vertical1View)
+        
+        // vertical 2
+        let vertical2View = UIView(frame: CGRect(x: verticalFactor * 2, y: 0, width: 2.0, height: view.bounds.size.height))
+        vertical2View.backgroundColor = UIColor.black
+        view.addSubview(vertical2View)
+        
+        
+        // horizontal 1
+        let horizontalFactor = view.bounds.size.height / 3
+        let horizontal1View = UIView(frame: CGRect(x: 0, y: horizontalFactor, width: view.bounds.size.width, height: 2))
+        horizontal1View.backgroundColor = UIColor.black
+        view.addSubview(horizontal1View)
+        
+        // horizontal 2
+        let horizontal2View = UIView(frame: CGRect(x: 0, y: horizontalFactor * 2, width: view.bounds.size.width, height: 2))
+        horizontal2View.backgroundColor = UIColor.black
+        view.addSubview(horizontal2View)
+        
+        // build buttons
+        buildGameButtons(view: gameView, verticalFactor: verticalFactor, horizontalFactor: horizontalFactor)
+        
+        
+    }
+    
+    
+    private func buildGameButtons(view: UIView, verticalFactor: CGFloat, horizontalFactor: CGFloat){
+        
+        // Line 0 ---------------
+        // button 0
+        let button0 = UIView(frame: CGRect(x: 0, y: 0, width: verticalFactor, height: horizontalFactor))
+        button0.backgroundColor = UIColor.yellow
+        view.addSubview(button0)
+        
+        // button 1
+        let button1 = UIView(frame: CGRect(x: verticalFactor, y: 0, width: verticalFactor, height: horizontalFactor))
+        button1.backgroundColor = UIColor.purple
+        view.addSubview(button1)
+        
+        // button 2
+        let button2 = UIView(frame: CGRect(x: verticalFactor * 2, y: 0, width: verticalFactor, height: horizontalFactor))
+        button2.backgroundColor = UIColor.green
+        view.addSubview(button2)
+        
+        // Line 1 ---------------
+        // button 3
+        let button3 = UIView(frame: CGRect(x: 0, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        button3.backgroundColor = UIColor.red
+        view.addSubview(button3)
+        
+        // button 4
+        let button4 = UIView(frame: CGRect(x: verticalFactor, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        button4.backgroundColor = UIColor.blue
+        view.addSubview(button4)
+
+        // button 5
+        let button5 = UIView(frame: CGRect(x: verticalFactor * 2, y: horizontalFactor, width: verticalFactor, height: horizontalFactor))
+        button5.backgroundColor = UIColor.brown
+        view.addSubview(button5)
+        
+    }
     
     
 }
