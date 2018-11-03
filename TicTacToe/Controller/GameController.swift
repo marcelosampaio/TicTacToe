@@ -32,14 +32,14 @@ class GameController: UIViewController, ScreenBuilderProtocol{
     
     // MARK: - Screen Builder Delegate
     func didSelectButton(buttonId: Int) {
-        
-        print("tapped buttonId: \(buttonId)")
+        if gameRunning {
+            print("tapped buttonId: \(buttonId)")
+        }
         
     }
     
     func didStartGame(startPlayer: Int) {
-        print("start player: \(startPlayer)")
-        
+
         // remove subViews of footer view
         self.screenBuilder.removeFooterViews(view: self.view)
         
@@ -53,6 +53,7 @@ class GameController: UIViewController, ScreenBuilderProtocol{
 
     func didStopGame() {
         // remove subViews of footer view
+        gameRunning = false
         self.screenBuilder.removeFooterViews(view: self.view)
         self.screenBuilder.addPlayerOptionToFooterView()
     }
