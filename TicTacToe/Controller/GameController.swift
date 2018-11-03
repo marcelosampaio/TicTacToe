@@ -51,6 +51,13 @@ class GameController: UIViewController, ScreenBuilderProtocol{
         
     }
 
+    func didStopGame() {
+        // remove subViews of footer view
+        self.screenBuilder.removeFooterViews(view: self.view)
+        self.screenBuilder.addPlayerOptionToFooterView()
+    }
+    
+    
 
 }
 

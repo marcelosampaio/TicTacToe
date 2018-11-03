@@ -12,6 +12,7 @@ import UIKit
 protocol ScreenBuilderProtocol: class {
     func didSelectButton(buttonId: Int)
     func didStartGame(startPlayer: Int)
+    func didStopGame()
 }
 
 
@@ -74,6 +75,10 @@ class ScreenBuilder {
     
     @objc func startButtonAction(sender: UIButton!) {
         delegate?.didStartGame(startPlayer: playerId)
+    }
+    
+    @objc func stopButtonAction(sender: UIButton!) {
+        delegate?.didStopGame()
     }
     
     // MARK: - Game Area
@@ -372,7 +377,7 @@ class ScreenBuilder {
     
     // MARK: - Game Controller Outlets
     
-    private func addPlayerOptionToFooterView() {
+    public func addPlayerOptionToFooterView() {
         
         let factor = self.footerView.bounds.size.width / 4
         let borderSpace : CGFloat = 16
@@ -419,6 +424,17 @@ class ScreenBuilder {
         msgLabel.text = playerName
         msgLabel.backgroundColor = UIColor.clear
         self.footerView.addSubview(msgLabel)
+        
+        
+        // UIButton for stop game -----------------
+        let stopButton = UIButton(frame: CGRect(x: 3 * factor, y: borderSpace, width: factor, height: (self.footerView.bounds.size.height - (2 * borderSpace))))
+        stopButton.backgroundColor = UIColor.clear
+        stopButton.setTitle("Reiniciar", for: .normal)
+        stopButton.setTitleColor(UIColor.black, for: .normal)
+        stopButton.addTarget(self, action: #selector(stopButtonAction), for: .touchUpInside)
+        self.footerView.addSubview(stopButton)
+        
+        // End of UIButton for start game -----------------
         
 
     }
