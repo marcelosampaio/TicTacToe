@@ -399,9 +399,10 @@ class ScreenBuilder {
     
     // MARK: - Game Controller Outlets
     public func removeFooterViews(view: UIView) {
-        // mainView is the footerView;
-        // this method will remove all its subViews
+        // view parameter is the controller's view
         for mainView in view.subviews {
+            // mainView is the footerView;
+            // this method will remove all its subViews
             if mainView.tag == 2000 {
                 for view in mainView.subviews {
                     view.removeFromSuperview()
@@ -409,6 +410,14 @@ class ScreenBuilder {
             }
         }
     }
+    
+    public func addGameRunningView(view: UIView) {
+        // view parameter is the controller's view
+        print("addGameRunningView")
+        
+    }
+    
+    
     
     
 }

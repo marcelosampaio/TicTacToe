@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GameController.swift
 //  TicTacToe
 //
 //  Created by Marcelo on 01/11/18.
@@ -10,7 +10,7 @@ import UIKit
 
 public var gameRunning = false
 
-class ViewController: UIViewController, ScreenBuilderProtocol{
+class GameController: UIViewController, ScreenBuilderProtocol{
     
     // MARK: - Properties
     private var screenBuilder : ScreenBuilder!
@@ -42,6 +42,13 @@ class ViewController: UIViewController, ScreenBuilderProtocol{
         
         // remove subViews of footer view
         self.screenBuilder.removeFooterViews(view: self.view)
+        
+        // build a new interface to game in progress
+        gameRunning = true
+        
+        // build game running view
+        self.screenBuilder.addGameRunningView(view: self.view)
+        
     }
 
 
