@@ -404,13 +404,14 @@ class ScreenBuilder {
         let factor = self.footerView.bounds.size.width / 4
         let borderSpace : CGFloat = 16
         let msgLabelWidth : CGFloat = (((factor * 2) + borderSpace) + (self.footerView.bounds.size.width / 2))
-        var playerName = "Eu"
+        var playerName = "Eu jogo"
         if startPlayer == 1 {
-            playerName = "Aparelho"
+            playerName = "Aparelho joga"
         }
         // Message Label for player option --------------------------
         
         let msgLabel = UILabel(frame: CGRect(x: borderSpace, y: borderSpace, width: msgLabelWidth, height: (self.footerView.bounds.size.height - (2 * borderSpace))))
+        msgLabel.tag = 2001  // use this tag to update game palyer name
         msgLabel.font = UIFont(name: "Halvetica", size: 17)
         msgLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
         msgLabel.textColor = UIColor.darkGray
