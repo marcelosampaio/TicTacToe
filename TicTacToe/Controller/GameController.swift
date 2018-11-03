@@ -47,7 +47,7 @@ class GameController: UIViewController, ScreenBuilderProtocol{
         gameRunning = true
         
         // build game running view
-        self.screenBuilder.addGameRunningView(view: self.view)
+        self.screenBuilder.addGameRunningView(startPlayer: startPlayer)
         
     }
 

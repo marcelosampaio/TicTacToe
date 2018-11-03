@@ -63,34 +63,7 @@ class ScreenBuilder {
         addPlayerOptionToFooterView()
         
     }
-    
-    private func addPlayerOptionToFooterView() {
-        
-        let factor = self.footerView.bounds.size.width / 4
-        let borderSpace : CGFloat = 16
-        let segmentedControlWidth = (factor * 2) + borderSpace
-        
-        
-        // UISegmentedControl for player option --------------------------
-        let items = ["Eu" , "Aparelho"]
-        let segmentedControl = UISegmentedControl(items : items)
-        segmentedControl.frame = CGRect(x: borderSpace, y: borderSpace, width: (segmentedControlWidth + (4 * borderSpace)), height: (self.footerView.bounds.size.height - (2 * borderSpace)))
-        segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.addTarget(self, action: #selector(segmentedControlAction), for: .valueChanged)
-        self.footerView.addSubview(segmentedControl)
-        // End of UISegmentedControl for player option -------------------
-        
-        // UIButton for start game -----------------
-        let startButton = UIButton(frame: CGRect(x: 3 * factor, y: borderSpace, width: factor, height: (self.footerView.bounds.size.height - (2 * borderSpace))))
-        startButton.backgroundColor = UIColor.clear
-        startButton.setTitle("Iniciar", for: .normal)
-        startButton.setTitleColor(UIColor.black, for: .normal)
-        startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
-        self.footerView.addSubview(startButton)
-        
-        // End of UIButton for start game -----------------
 
-    }
     
     
     // MARK: - UI Actions
@@ -398,6 +371,57 @@ class ScreenBuilder {
 
     
     // MARK: - Game Controller Outlets
+    
+    private func addPlayerOptionToFooterView() {
+        
+        let factor = self.footerView.bounds.size.width / 4
+        let borderSpace : CGFloat = 16
+        let segmentedControlWidth = (factor * 2) + borderSpace
+        
+        
+        // UISegmentedControl for player option --------------------------
+        let items = ["Eu" , "Aparelho"]
+        let segmentedControl = UISegmentedControl(items : items)
+        segmentedControl.frame = CGRect(x: borderSpace, y: borderSpace, width: (segmentedControlWidth + (4 * borderSpace)), height: (self.footerView.bounds.size.height - (2 * borderSpace)))
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentedControlAction), for: .valueChanged)
+        self.footerView.addSubview(segmentedControl)
+        // End of UISegmentedControl for player option -------------------
+        
+        // UIButton for start game -----------------
+        let startButton = UIButton(frame: CGRect(x: 3 * factor, y: borderSpace, width: factor, height: (self.footerView.bounds.size.height - (2 * borderSpace))))
+        startButton.backgroundColor = UIColor.clear
+        startButton.setTitle("Iniciar", for: .normal)
+        startButton.setTitleColor(UIColor.black, for: .normal)
+        startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
+        self.footerView.addSubview(startButton)
+        
+        // End of UIButton for start game -----------------
+        
+    }
+    
+    public func addGameRunningView(startPlayer: Int) {
+        let factor = self.footerView.bounds.size.width / 4
+        let borderSpace : CGFloat = 16
+        let msgLabelWidth : CGFloat = (((factor * 2) + borderSpace) + (self.footerView.bounds.size.width / 2))
+        var playerName = "Eu"
+        if startPlayer == 1 {
+            playerName = "Aparelho"
+        }
+        // Message Label for player option --------------------------
+        
+        let msgLabel = UILabel(frame: CGRect(x: borderSpace, y: borderSpace, width: msgLabelWidth, height: (self.footerView.bounds.size.height - (2 * borderSpace))))
+        msgLabel.font = UIFont(name: "Halvetica", size: 17)
+        msgLabel.font = UIFont.boldSystemFont(ofSize: 17.0)
+        msgLabel.textColor = UIColor.darkGray
+        msgLabel.textAlignment = NSTextAlignment.left
+        msgLabel.text = playerName
+        msgLabel.backgroundColor = UIColor.clear
+        self.footerView.addSubview(msgLabel)
+        
+
+    }
+    
     public func removeFooterViews(view: UIView) {
         // view parameter is the controller's view
         for mainView in view.subviews {
@@ -411,11 +435,7 @@ class ScreenBuilder {
         }
     }
     
-    public func addGameRunningView(view: UIView) {
-        // view parameter is the controller's view
-        print("addGameRunningView")
-        
-    }
+    
     
     
     
