@@ -32,6 +32,8 @@ class ScreenBuilder {
     private var innerEdges : CGFloat = 16
     private var playerId : Int = 0
     
+    
+    // MARK: - Constructor
     init(view: UIView) {
         
         self.view = view
