@@ -29,5 +29,9 @@ class GameBrain {
         print("*** boardMap: \(String(describing: boardMap))")
     }
     
+    func userMoves() {
+        print("*** USER MOVES ***")
+    }
+    
     
 }
