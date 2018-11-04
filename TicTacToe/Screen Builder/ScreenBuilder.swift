@@ -460,9 +460,8 @@ class ScreenBuilder {
             if view.tag == buttonId + 1000 {
                 let button : UIButton = view as! UIButton
                 button.setTitle("X", for: .normal)
-                button.removeFromSuperview()
-                self.gameView.addSubview(button)
-                print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+                button.setTitleColor(UIColor.black, for: .normal)
+                button.titleLabel?.font =  .systemFont(ofSize: 122)
                 break
             }
         }
