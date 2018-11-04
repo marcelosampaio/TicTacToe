@@ -34,6 +34,7 @@ class GameController: UIViewController, ScreenBuilderProtocol{
     func didSelectButton(buttonId: Int) {
         if gameRunning {
             print("tapped buttonId: \(buttonId)")
+            self.screenBuilder.setTouchOnCell(buttonId)
         }
         
     }

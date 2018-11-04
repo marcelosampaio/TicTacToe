@@ -454,6 +454,19 @@ class ScreenBuilder {
         }
     }
     
+    public func setTouchOnCell(_ buttonId: Int) {
+        print("********* tapped buttonId: \(buttonId)")
+        for view in self.gameView.subviews {
+            if view.tag == buttonId + 1000 {
+                let button : UIButton = view as! UIButton
+                button.setTitle("X", for: .normal)
+                button.removeFromSuperview()
+                self.gameView.addSubview(button)
+                print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+                break
+            }
+        }
+    }
     
     
     
