@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C8E375F218FA1EE00D8DF7E /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E375E218FA1EE00D8DF7E /* GameBrain.swift */; };
 		9CA78D7A218B767800779F49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA78D79218B767800779F49 /* AppDelegate.swift */; };
 		9CA78D7C218B767800779F49 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA78D7B218B767800779F49 /* GameController.swift */; };
 		9CA78D7F218B767800779F49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CA78D7D218B767800779F49 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C8E375E218FA1EE00D8DF7E /* GameBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBrain.swift; sourceTree = "<group>"; };
 		9CA78D76218B767800779F49 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA78D79218B767800779F49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9CA78D7B218B767800779F49 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C8E375D218FA18A00D8DF7E /* Game Brain */ = {
+			isa = PBXGroup;
+			children = (
+				9C8E375E218FA1EE00D8DF7E /* GameBrain.swift */,
+			);
+			path = "Game Brain";
+			sourceTree = "<group>";
+		};
 		9CA78D6D218B767800779F49 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		9CA78D78218B767800779F49 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				9C8E375D218FA18A00D8DF7E /* Game Brain */,
 				9CB053EC218D1B340045EEAC /* Extension */,
 				9CB053C9218BCA630045EEAC /* Screen Builder */,
 				9CB053C8218BC8AC0045EEAC /* Controller */,
@@ -182,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CB053CB218BCA8A0045EEAC /* ScreenBuilder.swift in Sources */,
+				9C8E375F218FA1EE00D8DF7E /* GameBrain.swift in Sources */,
 				9CA78D7C218B767800779F49 /* GameController.swift in Sources */,
 				9CA78D7A218B767800779F49 /* AppDelegate.swift in Sources */,
 				9CB053EE218D1B660045EEAC /* UIColor+Utils.swift in Sources */,

@@ -14,6 +14,9 @@ class GameController: UIViewController, ScreenBuilderProtocol{
     
     // MARK: - Properties
     private var screenBuilder : ScreenBuilder!
+    private var gameBrain : GameBrain!
+    
+    private var startPlayer : Int!
     private var gameStatus : String!
     private var playingPlayer : Int!
     private var boardMap = [String]()
@@ -35,6 +38,13 @@ class GameController: UIViewController, ScreenBuilderProtocol{
     // MARK: - Screen Builder Delegate
     func didSelectButton(buttonId: Int) {
         if gameRunning {
+            
+            // --------------------------------------------------
+            self.gameBrain = GameBrain(startPlayer: self.startPlayer, playingPlayer: self.playingPlayer, buttonId: buttonId, boardMap: self.boardMap)
+            self.gameBrain.deviceMoves()
+            // --------------------------------------------------
+            
+            
             print("tapped buttonId: \(buttonId)  Playing player: \(self.playingPlayer!)")
             self.screenBuilder.setTouchOnCell(buttonId: buttonId, playingPlayer: self.playingPlayer)
             if self.playingPlayer == 0 {
@@ -48,7 +58,7 @@ class GameController: UIViewController, ScreenBuilderProtocol{
     }
     
     func didStartGame(startPlayer: Int) {
-
+        
         // remove subViews of footer view
         self.screenBuilder.removeFooterViews(view: self.view)
         
@@ -58,8 +68,9 @@ class GameController: UIViewController, ScreenBuilderProtocol{
         // build game running view
         self.screenBuilder.addGameRunningView(startPlayer: startPlayer)
         
-        // selt playing player
+        // set playing player & start Player
         self.playingPlayer = startPlayer
+        self.startPlayer = startPlayer
         
         
     }
