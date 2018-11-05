@@ -454,7 +454,7 @@ class ScreenBuilder {
         }
     }
     
-    public func setTouchOnCell(buttonId: Int, playingPlayer: Int) {
+    public func setTouchOnCell(buttonId: Int, playingPlayer: inout Int) {
         for view in self.gameView.subviews {
             if view.tag == buttonId + 1000 {
                 let button : UIButton = view as! UIButton
@@ -465,6 +465,13 @@ class ScreenBuilder {
                 }
                 button.setTitleColor(UIColor.black, for: .normal)
                 button.titleLabel?.font =  .systemFont(ofSize: 122)
+                
+                if playingPlayer == 0 {
+                    playingPlayer = 1
+                }else{
+                    playingPlayer = 0
+                }
+                
                 break
             }
         }

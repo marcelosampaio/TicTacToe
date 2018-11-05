@@ -38,20 +38,13 @@ class GameController: UIViewController, ScreenBuilderProtocol{
     // MARK: - Screen Builder Delegate
     func didSelectButton(buttonId: Int) {
         if gameRunning {
-            
-            // --------------------------------------------------
-            self.gameBrain = GameBrain(startPlayer: self.startPlayer, playingPlayer: self.playingPlayer, buttonId: buttonId, boardMap: self.boardMap)
-            self.gameBrain.deviceMoves()
-            // --------------------------------------------------
-            
-            
             print("tapped buttonId: \(buttonId)  Playing player: \(self.playingPlayer!)")
-            self.screenBuilder.setTouchOnCell(buttonId: buttonId, playingPlayer: self.playingPlayer)
-            if self.playingPlayer == 0 {
-                self.playingPlayer = 1
-            }else{
-                self.playingPlayer = 0
-            }
+            self.screenBuilder.setTouchOnCell(buttonId: buttonId, playingPlayer: &self.playingPlayer)
+//            if self.playingPlayer == 0 {
+//                self.playingPlayer = 1
+//            }else{
+//                self.playingPlayer = 0
+//            }
             
         }
         
@@ -72,6 +65,15 @@ class GameController: UIViewController, ScreenBuilderProtocol{
         self.playingPlayer = startPlayer
         self.startPlayer = startPlayer
         
+        // if startPalyer is the device then use gameBrain to exec device moves
+        if self.startPlayer == 1 {
+            self.gameBrain = GameBrain()
+            self.gameBrain.startPlayer = self.startPlayer
+            self.gameBrain.playingPlayer = self.playingPlayer
+            let buttonId = self.gameBrain.deviceMoves()
+            self.screenBuilder.setTouchOnCell(buttonId: buttonId, playingPlayer: &self.playingPlayer)
+        }
+
         
     }
 
