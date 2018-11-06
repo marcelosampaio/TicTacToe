@@ -30,9 +30,9 @@ class GameBrain {
         print("*** startPlayer: \(String(describing: startPlayer))")
         print("*** playingPlayer: \(String(describing: playingPlayer))")
         print("*** buttonId: \(String(describing: buttonId))")
-        print("*** boardMap: \(String(describing: boardMap))")
+        print("***>> boardMap: \(String(describing: boardMap))")
         
-        return generateDeviceNextBoardId()
+        return -1 
         
     }
     
@@ -42,7 +42,7 @@ class GameBrain {
     
     
     // MARK: - Devices Helper
-    private func generateDeviceNextBoardId() -> Int {
+    public func generateDeviceNextBoardId() -> Int {
         var boardId : Int = -1
         
         var spares = [Int]()
@@ -53,7 +53,7 @@ class GameBrain {
         if spares.count > 0 {
             boardId = Int.random(in: 0 ... spares.count)
         }
-
+        self.boardMap = spares
         return boardId
     }
     

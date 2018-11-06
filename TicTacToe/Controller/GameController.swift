@@ -39,13 +39,14 @@ class GameController: UIViewController, ScreenBuilderProtocol{
     func didSelectButton(buttonId: Int) {
         if gameRunning {
             print("++++ tapped buttonId: \(buttonId)  Playing player: \(self.playingPlayer!)")
-            print("++++ boardMap: \(boardMap)")
+            
     
             if self.boardMap[buttonId] == -1 {
                 self.boardMap[buttonId] = self.playingPlayer
                 self.screenBuilder.setTouchOnCell(buttonId: buttonId, playingPlayer: &self.playingPlayer)
             }
-
+            
+            print("++++ boardMap: \(boardMap)")
         }
         
     }
@@ -70,11 +71,19 @@ class GameController: UIViewController, ScreenBuilderProtocol{
             self.gameBrain = GameBrain()
             self.gameBrain.startPlayer = self.startPlayer
             self.gameBrain.playingPlayer = self.playingPlayer
-            self.gameBrain.boardMap = self.boardMap
-            let buttonId = self.gameBrain.deviceMoves()
+
+//            let buttonId = self.gameBrain.deviceMoves()
+            let buttonId = self.gameBrain.generateDeviceNextBoardId()
             if buttonId >= 0 {
+
                 self.screenBuilder.setTouchOnCell(buttonId: buttonId, playingPlayer: &self.playingPlayer)
+
+                // udate memory boardMap
+                self.boardMap[buttonId] = self.startPlayer
+                
+                
             }
+
         }
 
         
