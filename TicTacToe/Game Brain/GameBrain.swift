@@ -9,27 +9,13 @@
 import Foundation
 
 class GameBrain {
-    var startPlayer : Int!
-    var playingPlayer : Int!
-    var buttonId : Int!
-    var boardMap : [Int]!
 
-    // MARK: - Constructor
-    
-    init() {
-        self.startPlayer = -1
-        self.playingPlayer = -1
-        self.buttonId = -1
-        self.boardMap = [-1, -1, -1, -1, -1, -1, -1, -1, -1]
-    }
-
-    
     // MARK: - Players Moves
     public func deviceMoves(boardMap: inout [Int]) -> Int {
         var boardId : Int = -1
         
         var spares = [Int]()
-        for position in self.boardMap {
+        for position in boardMap {
             spares.append(position)
         }
         

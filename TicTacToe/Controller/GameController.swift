@@ -69,9 +69,6 @@ class GameController: UIViewController, ScreenBuilderProtocol{
         // if startPalyer is the device then use gameBrain to exec device moves
         if self.startPlayer == 1 {
             self.gameBrain = GameBrain()
-            self.gameBrain.startPlayer = self.startPlayer
-            self.gameBrain.playingPlayer = self.playingPlayer
-            
             let buttonId = self.gameBrain.deviceMoves(boardMap: &self.boardMap)
             if buttonId >= 0 {
 
