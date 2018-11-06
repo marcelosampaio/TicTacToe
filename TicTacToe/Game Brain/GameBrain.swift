@@ -12,7 +12,7 @@ class GameBrain {
     var startPlayer : Int!
     var playingPlayer : Int!
     var buttonId : Int!
-    var boardMap : [String]!
+    var boardMap : [Int]!
 
     // MARK: - Constructor
     
@@ -20,7 +20,7 @@ class GameBrain {
         self.startPlayer = -1
         self.playingPlayer = -1
         self.buttonId = -1
-        self.boardMap = ["-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"]
+        self.boardMap = [-1, -1, -1, -1, -1, -1, -1, -1, -1]
     }
 
     
