@@ -25,37 +25,29 @@ class GameBrain {
 
     
     // MARK: - Players Moves
-    func deviceMoves() -> Int {
-        print("*** DEVICE MOVES ***")
-        print("*** startPlayer: \(String(describing: startPlayer))")
-        print("*** playingPlayer: \(String(describing: playingPlayer))")
-        print("*** buttonId: \(String(describing: buttonId))")
-        print("***>> boardMap: \(String(describing: boardMap))")
-        
-        return -1 
-        
-    }
-    
-    func userMoves() {
-        print("*** USER MOVES ***")
-    }
-    
-    
-    // MARK: - Devices Helper
-    public func generateDeviceNextBoardId() -> Int {
+    public func deviceMoves(boardMap: inout [Int]) -> Int {
         var boardId : Int = -1
         
         var spares = [Int]()
         for position in self.boardMap {
             spares.append(position)
         }
-
+        
         if spares.count > 0 {
             boardId = Int.random(in: 0 ... spares.count)
         }
-        self.boardMap = spares
+        boardMap = spares
         return boardId
     }
+
+    
+    func userMoves() {
+        print("*** USER MOVES ***")
+    }
+    
+    
+
+
     
     
 }

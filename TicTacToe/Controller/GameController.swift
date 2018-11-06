@@ -71,17 +71,15 @@ class GameController: UIViewController, ScreenBuilderProtocol{
             self.gameBrain = GameBrain()
             self.gameBrain.startPlayer = self.startPlayer
             self.gameBrain.playingPlayer = self.playingPlayer
-
-//            let buttonId = self.gameBrain.deviceMoves()
-            let buttonId = self.gameBrain.generateDeviceNextBoardId()
+            
+            let buttonId = self.gameBrain.deviceMoves(boardMap: &self.boardMap)
             if buttonId >= 0 {
 
                 self.screenBuilder.setTouchOnCell(buttonId: buttonId, playingPlayer: &self.playingPlayer)
 
                 // udate memory boardMap
                 self.boardMap[buttonId] = self.startPlayer
-                
-                
+
             }
 
         }
