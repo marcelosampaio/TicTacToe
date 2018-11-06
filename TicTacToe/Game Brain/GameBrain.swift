@@ -20,7 +20,7 @@ class GameBrain {
         self.startPlayer = -1
         self.playingPlayer = -1
         self.buttonId = -1
-        self.boardMap = [String]()
+        self.boardMap = ["-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"]
     }
 
     
@@ -32,15 +32,7 @@ class GameBrain {
         print("*** buttonId: \(String(describing: buttonId))")
         print("*** boardMap: \(String(describing: boardMap))")
         
-        
-        
-        
-        if self.boardMap.count == 0 {
-            let randomNumber = Int.random(in: 0 ... 8)
-            return randomNumber
-        }
-        
-        return -1
+        return generateDeviceNextBoardId()
         
     }
     
@@ -49,7 +41,23 @@ class GameBrain {
     }
     
     
-    
+    // MARK: - Devices Helper
+    private func generateDeviceNextBoardId() -> Int {
+        var boardId : Int = -1
+        
+//        var spares = [String]()
+//        for position in self.boardMap {
+//            spares.append(position)
+//        }
+//
+//
+//
+//
+//
+        
+        
+        return boardId
+    }
     
     
 }

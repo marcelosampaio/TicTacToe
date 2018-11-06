@@ -19,7 +19,7 @@ class GameController: UIViewController, ScreenBuilderProtocol{
     private var startPlayer : Int!
     private var gameStatus : String!
     private var playingPlayer : Int!
-    private var boardMap = [String]()
+    private var boardMap = ["-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1", "-1"]
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -38,7 +38,8 @@ class GameController: UIViewController, ScreenBuilderProtocol{
     // MARK: - Screen Builder Delegate
     func didSelectButton(buttonId: Int) {
         if gameRunning {
-            print("tapped buttonId: \(buttonId)  Playing player: \(self.playingPlayer!)")
+            print("++++ tapped buttonId: \(buttonId)  Playing player: \(self.playingPlayer!)")
+            print("++++ boardMap: \(boardMap)")
             self.screenBuilder.setTouchOnCell(buttonId: buttonId, playingPlayer: &self.playingPlayer)
 //            if self.playingPlayer == 0 {
 //                self.playingPlayer = 1
