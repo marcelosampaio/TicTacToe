@@ -45,17 +45,15 @@ class GameBrain {
     private func generateDeviceNextBoardId() -> Int {
         var boardId : Int = -1
         
-//        var spares = [String]()
-//        for position in self.boardMap {
-//            spares.append(position)
-//        }
-//
-//
-//
-//
-//
-        
-        
+        var spares = [Int]()
+        for position in self.boardMap {
+            spares.append(position)
+        }
+
+        if spares.count > 0 {
+            boardId = Int.random(in: 0 ... spares.count)
+        }
+
         return boardId
     }
     

@@ -70,6 +70,7 @@ class GameController: UIViewController, ScreenBuilderProtocol{
             self.gameBrain = GameBrain()
             self.gameBrain.startPlayer = self.startPlayer
             self.gameBrain.playingPlayer = self.playingPlayer
+            self.gameBrain.boardMap = self.boardMap
             let buttonId = self.gameBrain.deviceMoves()
             if buttonId >= 0 {
                 self.screenBuilder.setTouchOnCell(buttonId: buttonId, playingPlayer: &self.playingPlayer)
